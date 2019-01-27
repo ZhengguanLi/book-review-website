@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='styles/signlayout.css') }}>
+    <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='styles/bookreview.css') }}>
+    <title>Book Reviews</title>
+</head>
+
+<body>
+    <nav aria-label="breadcrumb">
+        <ul>
+            <li id="home"><a href="{{ url_for('index') }}">Home</a></li>
+            <li id="logout" class="logout"><a href="{{ url_for('logout') }}">Log out</a></li>
+            <li id="username" class="username"><a href="#username">{{ session['username'] }}</a></li>
+        </ul>
+    </nav>
+
+    <table class="table table-striped table-hover col-lg-8 offset-lg-2 text-center">
+        <thead class="thead-light">
+            <th scope="col">ISBN</th>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">Year</th>
+            <th scope="col">Average Rating</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ book_basic_info['isbn'] }}</td>
+                <td>{{ book_basic_info['title'] }}</td>
+                <td>{{ book_basic_info['author'] }}</td>
+                <td>{{ book_basic_info['year'] }}</td>
+
+                {% if book_avg_rating == 0 %}
+                <td>None</td>
+                {% else %}
+                <td>{{ book_avg_rating|round(2) }}</td>
+                {% endif %}
+            </tr>
+        </tbody>
+    </table>
+
+    {% if goodreads_review %}
+        <div class="summary">
+            Summary from Goodreads <br>
+            Average rating: {{ goodreads_review['books'][0]['average_rating'] }} <br>
+            Average rating: {{ goodreads_review['books'][0]['work_ratings_count'] }}
+        </div>
+    {% endif %}
+
+    {% if book_reviews|length != 0 %}
+        {% for book_review in book_reviews %}
+            <div class="col-lg-8 offset-lg-2 col-sm-6 offset-sm-3">
+                <div class="alert alert-primary" role="alert">
+                    {{ book_review.review }}    --{{ book_review.rating }}
+                </div>
+            </div>
+        {% endfor %}
+    {% else %}
+        <label for="rating">No Reviews Yet...</label>
+    {% endif %}
+
+    {% if err_msg|length != 0 %}
+    <div class="col-lg-4 offset-lg-4 col-sm-6 offset-sm-3 text-center">
+        <div class="alert alert-primary" role="alert">
+            {{ err_msg }}
+        </div>
+    </div>
+    {% endif %}
+
+    <form class="col-lg-8 offset-lg-2 text-center" action="{{ url_for('add_review', isbn=book_basic_info['isbn']) }}"
+        method="post">
+        <div class="form-group">
+            <label for="review">Add your review?</label>
+            <input type="text" class="form-control" name="review" id="review" placeholder="Enter..." required>
+            <small id="reviewHelp" class="form-text text-muted">One user can only add review for the same book once.</small>
+        </div>
+
+        <div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="radAnswer" id="one" value="1" required>
+                <label class="form-check-label" for="one">1</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="radAnswer" id="two" value="2">
+                <label class="form-check-label" for="two">2</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="radAnswer" id="three" value="3">
+                <label class="form-check-label" for="three">3</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="radAnswer" id="four" value="4">
+                <label class="form-check-label" for="four">4</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="radAnswer" id="five" value="5">
+                <label class="form-check-label" for="five">5</label>
+            </div>
+        <div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+</body>
+
+</html>

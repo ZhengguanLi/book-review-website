@@ -1,0 +1,60 @@
+body {
+    background-image : url("/static/images/night.jpg");
+    background-size: cover;
+}
+
+form {
+    margin-top: 80px;
+    color: whitesmoke;
+}
+
+.alert {
+    margin-top: 60px;
+    height: 25px;
+    line-height: 25px;
+    padding: 0px 15px;  
+}
+
+nav {
+    display: block;
+}
+
+#home, #search {
+    float: left;
+}
+
+#login, #signup, #username, #logout {
+    float: right;
+}
+
+ul {
+    list-style-type: none;
+    overflow: hidden;
+    background: #333;
+    margin: 0;
+    padding: 0;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+table {
+    margin-top: 60px;
+    color: whitesmoke;
+}
+
+tr {
+    line-height: 20px;
+    color: whitesmoke;
+}
+
+p{
+    margin-top: 50px;
+    text-align: center;
+    color: whitesmoke;
+}

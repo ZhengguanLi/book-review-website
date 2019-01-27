@@ -1,0 +1,26 @@
+import requests
+res = requests.get("https://www.goodreads.com/book/review_counts.json", params={"key": "Of50BiovbVKuGis0N8109g", "isbns": "9781632168146"})
+
+----------------------------------------------------------------------
+Database Credentials
+Get credentials for manual connections to this database.
+
+Cancel
+Please note that these credentials are not permanent.
+
+Heroku rotates credentials periodically and updates applications where this database is attached.
+
+Host
+ec2-54-163-230-178.compute-1.amazonaws.com
+Database
+dfldg6tdktje2m
+User
+aspvswtezcmnno
+Port
+5432
+Password
+43c0aef35b09ffa2e7d5101487e4d5c1cc6b2c16e3258bc2b18f81ee30834687
+URI
+postgres://aspvswtezcmnno:43c0aef35b09ffa2e7d5101487e4d5c1cc6b2c16e3258bc2b18f81ee30834687@ec2-54-163-230-178.compute-1.amazonaws.com:5432/dfldg6tdktje2m
+Heroku CLI
+heroku pg:psql postgresql-horizontal-37743 --app sugarporoject1

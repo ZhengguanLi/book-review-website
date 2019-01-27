@@ -1,0 +1,54 @@
+body {
+    background-image: url("/static/images/galaxy.jpg");
+    background-size: cover;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 100px;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+}
+
+p {
+    margin-top: 50px;
+    font-size: 20px;
+    color: burlywood;
+    text-align: center;
+    padding: 40px;
+}
+
+nav {
+    display: block;
+    width: 100%;
+}
+
+
+ul {
+    list-style-type: none;
+    overflow: hidden;
+    background: #333;
+    margin: 0;
+    padding: 0;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#home, #search {
+    float: left;
+}
+
+#login, #logout, #signup, #username {
+    float: right;
+}
+
+li a:hover {
+    background-color: #111;
+}

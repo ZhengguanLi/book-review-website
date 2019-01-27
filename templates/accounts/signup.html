@@ -1,0 +1,25 @@
+{% extends "accounts/signlayout.html" %}
+
+{% block title %}
+  {{ title }}
+{% endblock %}
+
+{% block msg %}
+  <p id="msg">{{ msg }}</p>
+{% endblock %}
+
+{% block InputUsername %}
+    <div class="form-group">
+        <label for="InputUsername">Username</label>
+        <input type="text" name="username" class="form-control" id="InputUsername" aria-describedby="usernameHelp" placeholder="Enter Username">
+        <small id="usernameHelp" class="form-text text-muted">who am I?</small>
+    </div>
+{% endblock %}
+
+{% block action %}
+    action="{{ url_for('signup') }}" method="post"
+{% endblock %}
+
+{% block submit %}
+  {{ submit_btn_text }}
+{% endblock%}

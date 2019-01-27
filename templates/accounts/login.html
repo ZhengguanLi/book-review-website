@@ -1,0 +1,17 @@
+{% extends "accounts/signlayout.html" %}
+
+{% block title %}
+  {{ title }}
+{% endblock %}
+
+{% block msg %}
+  <p id="msg">{{ msg }}</p>
+{% endblock %}
+
+{% block action %}
+  action="{{ url_for('login') }}" method="post"
+{% endblock %}
+
+{% block submit %}
+  {{ submit_btn_text }}
+{% endblock %}

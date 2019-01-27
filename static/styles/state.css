@@ -1,0 +1,40 @@
+body {
+    background-image: url('/static/images/night.jpg');
+    background-size: cover;
+}
+
+.alert {
+    margin-top: 100px;
+}
+
+nav {
+    display: block;
+}
+
+ul {
+    list-style-type: none;
+    overflow: hidden;
+    background: #333;
+    margin: 0;
+    padding: 0;
+}
+
+#home {
+    float: left;
+}
+
+#login, #signup{
+    float: right;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}

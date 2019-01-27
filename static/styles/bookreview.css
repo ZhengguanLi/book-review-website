@@ -1,0 +1,59 @@
+body {
+    background-image : url("/static/images/night.jpg");
+    background-size: cover;
+    text-align: center;
+}
+
+form {
+    margin-top: 30px;
+    color: whitesmoke;
+}
+
+button {
+    margin-top: 30px;
+}
+
+nav {
+    display: block;
+}
+
+ul {
+    list-style-type: none;
+    overflow: hidden;
+    background: #333;
+    margin: 0;
+    padding: 0;
+}
+
+#home {
+    float: left;
+}
+
+#username, #logout {
+    float: right;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.summary {
+    display: block;
+    width: 300px;
+    margin: 0 auto;
+    text-align: left;
+    color: whitesmoke;
+    border: 1px solid chocolate;
+}
+
+.summary p {
+    text-align: left;
+}
+
+.alert{
+    text-align: left;
+}

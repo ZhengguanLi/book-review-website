@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=h1, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename='styles/index.css') }}">
+    <title>Book Reviews Website</title>
+
+</head>
+<body>
+    <nav aria-label="breadcrumb">
+        <ul>
+            <li id="home"><a href="{{ url_for('index') }}">Home</a></li>
+            {% if 'username' not in session %}
+                <li id="signup"><a href="{{ url_for('signup_page') }}">Sign Up</a></li>
+                <li id="login"><a href="{{ url_for('login_page') }}">Sign In</a></li>
+            {% else %}
+                <li id="search"><a href="{{ url_for('search_page') }}">Search</a></li>
+                <li id="logout"><a href="{{ url_for('logout') }}">Log out</a></li>
+                <li id="username"><a href="#username">{{ session['username'] }}</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+
+    <h1>Welcome to my website!!!</h1>
+    <p>Register account, search 5000 books, find their reviews from all the users and Goodreads, add your new reviews and ratings</p>
+
+</body>
+</html>
