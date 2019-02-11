@@ -1,6 +1,6 @@
 # Book Review Website
 
-In this project, users will be able to register for your website and then log in using their username and password. Once they log in, they will be able to search for books, leave reviews for individual books, and see the reviews made by other people. You’ll also use the a third-party API by Goodreads, another book review website, to pull in ratings from a broader audience. Finally, users will be able to query for book details and book reviews programmatically via your website’s API.
+In this project, users will be able to register for your website and then log in using their username and password. Once they log in, they will be able to search for books, leave reviews for individual books, and see the reviews made by other people. You’ll also use the a third-party API by **Goodreads**, another book review website, to pull in ratings from a broader audience. Finally, users will be able to query for book details and book reviews programmatically via your website’s API.
 
 [Live Demo](https://bookstore-sugar.herokuapp.com/)
 
@@ -18,7 +18,9 @@ In this project, users will be able to register for your website and then log in
     pip install -r requirements.txt
     ```
 
-- Set up the PostgreSQL hosted by **Heroku**, get the `DATABASE_URL`
+- Set up the PostgreSQL hosted by **Heroku** 
+
+- Get the `DATABASE_URL` from Heroku
 
 - Set `DATABASE_URL` in **import.py**
 
@@ -71,6 +73,7 @@ In this project, users will be able to register for your website and then log in
 
 ## Contribution
 
+- [Adminer](https://adminer.cs50.nethttps://adminer.cs50.net) - A database management tool
 - [Goodreads](https://www.goodreads.com/) - A "social cataloging" website to freely search database of books, annotations, and reviews.
 - [Heroku](https://www.heroku.com/) - A cloud platform as a service.
 
