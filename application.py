@@ -75,13 +75,13 @@ def search_page():
 @app.route("/search/result", methods=['post'])
 def search():
     search_value = request.form.get('search_input')
-    result = db.execute("SELECT * from books where isbn = :isbn", {'isbn':search_value}).fetchall();
+    result = db.execute("SELECT * from books where isbn = :isbn", {'isbn':search_value}).fetchall()
     if len(result) != 0:
         return render_template('search.html', result = result)
-    result = db.execute("SELECT * from books where title = :title", {'title':search_value}).fetchall();
+    result = db.execute("SELECT * from books where title = :title", {'title':search_value}).fetchall()
     if len(result) != 0:
         return render_template('search.html', result = result)
-    result = db.execute("SELECT * from books where author = :author", {'author':search_value}).fetchall();
+    result = db.execute("SELECT * from books where author = :author", {'author':search_value}).fetchall()
     if len(result) != 0:
         return render_template('./search.html', result = result)
     return render_template('search.html', result = result)
