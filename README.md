@@ -20,10 +20,16 @@ In this project, users will be able to register for your website and then log in
 
 - Set up the PostgreSQL hosted by **Heroku**, get the `DATABASE_URL`
 
-- Set `DATABASE_URL` in import.py and application.py
+- Set `DATABASE_URL` in **import.py**
 
     ```python
         10  DATABASE_URL=''
+    ```
+
+- Set `DATABASE_URL` in **application.py**
+
+    ```python
+        6   DATABASE_URL = ""
     ```
 
 ### Installation
@@ -70,4 +76,4 @@ In this project, users will be able to register for your website and then log in
 
 ## Author
 
-- Zhengguan
+- [Zhengguan](https://github.com/ZhengguanLi)
